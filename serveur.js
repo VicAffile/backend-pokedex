@@ -1,4 +1,5 @@
 let express = require('express');
+let db = require('./bdd/bdd');
 
 let app = express();
 
