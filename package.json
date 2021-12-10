@@ -1,0 +1,22 @@
+{
+    "name": "backend-pokedex",
+    "version": "1.0.0",
+    "description": "",
+    "main": "serveur.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VicAffile/backend-pokedex.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VicAffile/backend-pokedex/issues"
+    },
+    "homepage": "https://github.com/VicAffile/backend-pokedex#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
