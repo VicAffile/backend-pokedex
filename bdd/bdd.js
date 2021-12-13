@@ -1,12 +1,10 @@
+const mongoose = require("mongoose");
 require('dotenv').config();
 
 const UTILISATEUR = process.env.BDD_UTILISATEUR;
 const MOTDEPASSE = process.env.BDD_MOTDEPASSE;
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://" + UTILISATEUR + ":" + MOTDEPASSE + "@pokemon.svi0i.mongodb.net/pokemon", {
-
-});
+mongoose.connect("mongodb+srv://" + UTILISATEUR + ":" + MOTDEPASSE + "@pokemon.svi0i.mongodb.net/pokedex");
 
 let connection = mongoose.connection;
 
