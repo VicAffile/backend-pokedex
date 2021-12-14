@@ -7,14 +7,15 @@ const app = express();
 
 app.get('/', async(req, res) => {
     const pokemons = await Pokemon.recuperer();
-    let reponse = [];
+    let liste = [];
     pokemons.forEach((pokemon) => {
-        reponse.push({
+        liste.push({
             "numero": pokemon.numero,
             "nom": pokemon.nom_fr,
             "type": pokemon.type
         });
     });
+    const reponse = JSON.stringify({ liste });
     console.log(reponse);
     res.send(reponse);
 });
