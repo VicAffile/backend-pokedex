@@ -15,7 +15,7 @@ app.get('/', async(req, res) => {
             "type": pokemon.type
         });
     });
-    const reponse = JSON.stringify({ liste });
+    const reponse = JSON.stringify(liste);
     console.log(reponse);
     res.send(reponse);
 });
@@ -23,7 +23,7 @@ app.get('/', async(req, res) => {
 app.get('/:pokemon', async(req, res) => {
     const nom = req.params.pokemon;
     const pokemon = await Pokemon.recuperer_pokemon(nom);
-    const reponse = JSON.stringify({ pokemon });
+    const reponse = JSON.stringify(pokemon);
     console.log(reponse);
     res.send(reponse);
 });
