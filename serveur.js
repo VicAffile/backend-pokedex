@@ -11,7 +11,8 @@ app.get('/', async(req, res) => {
     pokemons.forEach((pokemon) => {
         liste.push({
             "numero": pokemon.numero,
-            "nom": pokemon.nom_fr,
+            "nom_fr": pokemon.nom_fr,
+            "nom_jap": pokemon.nom_jap,
             "type": pokemon.type
         });
     });
