@@ -9,6 +9,8 @@ let pokemonSchema = new Schema({
     sprite: { type: String },
     type: { type: Array },
     categorie: { type: String },
+    taille: { type: String },
+    poids: { type: String },
     talent: { type: Array },
     groupe_oeuf: { type: Array },
     pas_eclosion: { type: String },
