@@ -2,6 +2,7 @@ const express = require('express');
 
 const db = require('./bdd/bdd');
 const Pokemon = require('./bdd/pokemon');
+const Type = require('./bdd/type');
 
 const app = express();
 
@@ -38,6 +39,20 @@ app.get('/:pokemon/sprite', async(req, res) => {
     const nom = req.params.pokemon;
     const pokemon = await Pokemon.recuperer_pokemon(nom);
     res.sendFile("publique/images/sprites/" + pokemon[0].sprite, { root: __dirname });
+})
+
+app.get('/types/:type', async(req, res) => {
+    const nom = req.params.type;
+    const type = await Type.recuperer_type(nom);
+    const reponse = JSON.stringify(type);
+    console.log(reponse);
+    res.send(reponse);
+})
+
+app.get('/types/:type/image', async(req, res) => {
+    const nom = req.params.type;
+    const type = await Type.recuperer_type(nom);
+    res.sendFile("publique/images/types/" + type[0].image, { root: __dirname });
 })
 
 app.listen(process.env.PORT || 8000);
