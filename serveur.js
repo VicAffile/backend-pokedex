@@ -17,6 +17,10 @@ app.get('/', async(req, res) => {
             "type": pokemon.type
         });
     });
+    liste.sort((a, b) => {
+        return parseInt(a.numero) - parseInt(b.numero);
+    });
+    console.log(liste)
     const reponse = JSON.stringify(liste);
     res.send(reponse);
 });
@@ -55,5 +59,5 @@ app.get('/types/:type/image', async(req, res) => {
     res.sendFile("publique/images/types/" + type[0].image, { root: __dirname });
 })
 
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT || 8080);
 console.log("L'application tourne.");
